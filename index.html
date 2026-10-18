@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Project Snow White: rasterize time, navigate space</title>
+<meta name="description" content="Real-time 4D volumetric video, streamed as a single video file and rendered live in your browser: Gaussian splatting, free viewpoint, no plug-in.">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="bar">
+  <a class="mark" href="#top">Project Snow White</a>
+  <nav aria-label="Sections">
+    <a href="#live">Live</a><a href="#numbers">Key metrics</a><a href="#compare">State of the art</a><a href="#about">How it works</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" id="live" aria-labelledby="h-hero">
+    <h1 id="h-hero">Rasterize time. Navigate space.</h1>
+    <p class="lead">Real-time 4D volumetric video, streamed as a single video file and rendered live in your browser.</p>
+
+    <div class="stage" id="stage">
+      <canvas id="view" tabindex="0" aria-label="The scene, drawn live. A tour of camera moves plays; drag to take the camera: drag to orbit, scroll to zoom, W A S D to move, right-drag to pan."></canvas>
+      <img class="poster" id="poster" src="assets/still.jpg" alt="A still of the scene: a kitchen, a person searing salmon with a torch">
+      <div class="tour" id="tour" aria-hidden="true">
+        <div class="vignette"></div>
+        <div class="black" id="t-black"></div>
+      </div>
+      <div class="stage-note" id="stage-note" role="status">Loading the stream</div>
+      <div class="chip" id="chip" hidden></div>
+      <div id="meter" hidden></div>
+      <div class="controls" id="controls" hidden>
+        <label class="pick"><span>Tour</span><select id="s-tour" aria-label="Choose a tour: a camera move through the scene, drawn live"></select></label>
+        <button type="button" id="b-tour" aria-pressed="true">Stop the tour</button>
+        <button type="button" id="b-play" aria-pressed="true">Pause the video</button>
+        <button type="button" id="b-home">Reset view</button>
+        <label class="pick"><span>View</span><select id="s-cam" aria-label="Go to one of the original cameras"></select></label>
+        <button type="button" id="b-stats" aria-pressed="false" title="Frame rate, render size and data rate (the I key)">Stats</button>
+        <button type="button" id="b-full">Full screen</button>
+      </div>
+    </div>
+    <p class="hint" id="hint">Drag to orbit &middot; Scroll to zoom &middot; WASD to move &middot; Right-drag to pan</p>
+  </section>
+
+  <section class="numbers" id="numbers" aria-labelledby="h-numbers">
+    <h2 id="h-numbers">Key metrics at a glance</h2>
+    <div class="cmp-wrap"><table class="cmp metrics">
+      <thead><tr><th>Metric</th><th>Measurement</th><th>Context</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bit rate</th><td><b>20 Mbit/s</b></td><td>About what a standard 4K film stream needs</td></tr>
+        <tr><th scope="row">Frame rate</th><td><b>120+ fps</b>, VR capable</td><td>Drawn live at your display's rate, fast enough for a headset</td></tr>
+        <tr><th scope="row">Visual fidelity</th><td><b>31.3 dB</b> PSNR</td><td>Against the original camera footage (higher is better)</td></tr>
+        <tr><th scope="row">Perceptual error</th><td><b>0.148</b> LPIPS</td><td>VGG, against the original camera footage (lower is better)</td></tr>
+      </tbody>
+    </table></div>
+    <p class="fine">Measured on the standard benchmark: the full 300-frame clip of the scene, at the benchmark's resolution, against camera 0, which the benchmark holds out (it is never trained on), from the stream as it is delivered.</p>
+  </section>
+
+  <section class="compare" id="compare" aria-labelledby="h-compare">
+    <h2 id="h-compare">State of the art: 4D Gaussian splatting</h2>
+    <ul class="tags" aria-label="What this is">
+      <li class="on">Gaussian splatting</li><li class="on">Runs in a web browser</li><li class="on">One video file</li><li class="on">120+ fps, VR capable</li>
+    </ul>
+    <svg class="plot" id="cmp-plot" viewBox="0 0 900 380" role="img" aria-label="Quality against stream size: each method as a dot, PSNR up, bit-rate to the right on a logarithmic scale"></svg>
+    <h3 class="proof">The numbers behind the graph</h3>
+    <div class="cmp-wrap"><table class="cmp" id="cmp"><caption class="fine" style="text-align:left;caption-side:bottom;padding-top:10px">Loading the comparison</caption></table></div>
+    <p class="fine" id="cmp-note"></p>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="h-about">
+    <h2 id="h-about">How it works</h2>
+    <div class="cols">
+      <div>
+        <h3>1. The scene</h3>
+        <p>&ldquo;Flame salmon&rdquo; from the <a href="https://github.com/facebookresearch/Neural_3D_Video">Neural 3D Video dataset</a> (Li et al., CVPR 2022; CC BY-NC 4.0): a kitchen filmed by synchronised cameras, with fast, complex motion. The clip is the benchmark's 300 frames, ten seconds.</p>
+      </div>
+      <div>
+        <h3>2. The stream</h3>
+        <p>Every frame is a complete 3D scene of Gaussian splats, stored as the frames of an ordinary HEVC video file. The tours were never filmed: each is a camera sent through the scene after the fact, and each frame is drawn as you watch. The tour and the video are separate, so pause the video and the camera travels on; drag the picture and the camera is yours.</p>
+      </div>
+      <div>
+        <h3>3. The player</h3>
+        <p>Your browser's hardware video decoder unpacks the stream and your graphics card draws the scene, with WebGPU or WebGL 2. The picture's size and frame rate follow the load, so it stays smooth on a laptop and on a phone.</p>
+      </div>
+    </div>
+    <h3 class="req">System requirements</h3>
+    <p class="fine">A browser with WebGPU or WebGL 2 and hardware HEVC decoding. Tried on Chrome and Edge (Windows, macOS) and Safari on iPhone; where the live scene cannot start, the page shows a still and says why.</p>
+  </section>
+</main>
+
+<footer>
+  <p>The scene is from the <a href="https://github.com/facebookresearch/Neural_3D_Video">Neural 3D Video dataset</a> (Li et al., CVPR 2022, <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>), reconstructed here as a 4D Gaussian splatting stream, and is shown for research demonstration. The player draws with Babylon.js (Apache License 2.0, <a href="licenses/BABYLON-NOTICE.md">notice</a>).</p>
+</footer>
+
+<script src="engine.js"></script>
+<script src="lib.js"></script>
+<script type="module" src="site.js"></script>
+</body>
+</html>

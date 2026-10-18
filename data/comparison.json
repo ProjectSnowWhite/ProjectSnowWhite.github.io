@@ -1,0 +1,125 @@
+{
+  "updated": "2026-10-16",
+  "status": "measured on the benchmark's protocol",
+  "scene": "Flame salmon (Neural 3D Video)",
+  "ours": {
+    "name": "This work",
+    "psnr": 31.34,
+    "lpips": 0.148,
+    "mbps": 19.7,
+    "kind": "streaming",
+    "browser": true,
+    "lpips_net": "VGG",
+    "fps_note": "120+ fps, VR capable, in a browser",
+    "kb": 82.2
+  },
+  "others": [
+    {
+      "name": "4DGS-CC",
+      "venue": "arXiv 2025",
+      "ref": "2504.18925",
+      "kind": "offline",
+      "psnr": 29.29,
+      "lpips": null,
+      "kb": 11
+    },
+    {
+      "name": "ComGS-s",
+      "venue": "NeurIPS 2025",
+      "ref": "2505.16533",
+      "kind": "streaming",
+      "psnr": 29.31,
+      "lpips": null,
+      "kb": 52,
+      "fps": 91,
+      "gpu": "A100"
+    },
+    {
+      "name": "S2GS-full",
+      "venue": "arXiv 2026, preprint",
+      "ref": "2608.19639",
+      "kind": "streaming",
+      "psnr": 30.26,
+      "lpips": null,
+      "kb": 110,
+      "fps": 482,
+      "gpu": "RTX 4090"
+    },
+    {
+      "name": "ComGS-l",
+      "venue": "NeurIPS 2025",
+      "ref": "2505.16533",
+      "kind": "streaming",
+      "psnr": 29.58,
+      "lpips": null,
+      "kb": 129,
+      "fps": 147,
+      "gpu": "A100"
+    },
+    {
+      "name": "StreamSTGS",
+      "venue": "arXiv 2025",
+      "ref": "2511.06046",
+      "kind": "streaming",
+      "psnr": 29.4,
+      "lpips": 0.156,
+      "kb": 148,
+      "lpips_net": "VGG",
+      "fps": 100,
+      "gpu": "A6000"
+    },
+    {
+      "name": "FreeTimeGS",
+      "venue": "CVPR 2025",
+      "ref": "2506.05348",
+      "kind": "offline",
+      "psnr": 31.18,
+      "lpips": null,
+      "kb": 417
+    },
+    {
+      "name": "4DGC",
+      "venue": "CVPR 2025",
+      "ref": "2503.18421",
+      "kind": "streaming",
+      "psnr": 28.49,
+      "lpips": null,
+      "kb": 510,
+      "fps": 168,
+      "gpu": "RTX 3090"
+    },
+    {
+      "name": "ReCon-GS",
+      "venue": "NeurIPS 2025",
+      "ref": "2509.24325",
+      "kind": "streaming",
+      "psnr": 30.43,
+      "lpips": null,
+      "kb": 610,
+      "fps": 250,
+      "gpu": "RTX 4090"
+    },
+    {
+      "name": "HiCoM",
+      "venue": "NeurIPS 2024",
+      "ref": "2411.07541",
+      "kind": "streaming",
+      "psnr": 28.37,
+      "lpips": null,
+      "kb": 900,
+      "fps": 274,
+      "gpu": "RTX 4090"
+    },
+    {
+      "name": "3DGStream",
+      "venue": "CVPR 2024",
+      "ref": "2403.01444",
+      "kind": "streaming",
+      "psnr": 28.42,
+      "lpips": null,
+      "kb": 7800,
+      "fps": 215,
+      "gpu": "RTX 3090"
+    }
+  ]
+}

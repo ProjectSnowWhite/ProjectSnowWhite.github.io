@@ -1,0 +1,2635 @@
+{
+ "tour": 3,
+ "scene": "Flame salmon",
+ "subjects": {
+  "pan": [
+   6.35,
+   3.45,
+   7.85
+  ],
+  "hand": [
+   6.49,
+   1.9,
+   8.6
+  ],
+  "face": [
+   9.24,
+   -2.07,
+   9.58
+  ],
+  "chest": [
+   9.01,
+   0.8,
+   9.9
+  ],
+  "scene": [
+   7.8,
+   1.7,
+   8.9
+  ],
+  "counter": [
+   7.7,
+   3.87,
+   6.81
+  ],
+  "plate": [
+   9.72,
+   4.5,
+   5.25
+  ],
+  "kettle": [
+   11.73,
+   3.7,
+   1.82
+  ],
+  "mugs": [
+   11.79,
+   4.03,
+   3.77
+  ],
+  "oil": [
+   2.15,
+   2.8,
+   10.56
+  ],
+  "bottles": [
+   2.41,
+   2.57,
+   10.76
+  ],
+  "glass": [
+   0.91,
+   3.98,
+   10.95
+  ],
+  "shelf": [
+   14.6,
+   1.1,
+   5.6
+  ],
+  "books": [
+   15.14,
+   0.27,
+   4.71
+  ],
+  "jars": [
+   16.07,
+   -2.99,
+   5.15
+  ],
+  "shelf_left": [
+   12.85,
+   1.1,
+   7.26
+  ],
+  "books_left": [
+   13.39,
+   0.27,
+   6.37
+  ],
+  "jars_left": [
+   14.32,
+   -2.99,
+   6.81
+  ],
+  "eyes": [
+   8.94,
+   -1.2,
+   7.5
+  ],
+  "cap": [
+   9.49,
+   -2.13,
+   7.88
+  ],
+  "torch": [
+   6.67,
+   1.93,
+   7.81
+  ],
+  "flame": [
+   6.12,
+   3.45,
+   7.8
+  ],
+  "pan_rim": [
+   7.02,
+   3.83,
+   7.65
+  ],
+  "salmon": [
+   9.49,
+   4.36,
+   4.74
+  ],
+  "mug": [
+   12.19,
+   3.95,
+   4.77
+  ],
+  "nutcracker": [
+   14.06,
+   2.01,
+   10.58
+  ],
+  "figurine": [
+   2.91,
+   1.5,
+   20.04
+  ],
+  "painting": [
+   16.25,
+   -3.74,
+   7.88
+  ],
+  "vase": [
+   15.66,
+   -3.0,
+   4.38
+  ],
+  "window_left": [
+   5.75,
+   -0.41,
+   19.67
+  ],
+  "flame_nutcracker": [
+   10.09,
+   1.0,
+   9.19
+  ],
+  "eyes_nutcracker": [
+   11.5,
+   0.4,
+   9.04
+  ],
+  "bottles_figurine": [
+   2.66,
+   2.03,
+   15.4
+  ]
+ },
+ "tours": [
+  {
+   "name": "Demo: fast, wide, bullet time",
+   "shots": [
+    {
+     "label": "Opening: wide arc",
+     "seconds": 5.0,
+     "ease": "inOut",
+     "enter": "dip",
+     "rail": [
+      "cam07",
+      "cam06",
+      "cam00",
+      "cam05"
+     ],
+     "look": "scene",
+     "lens": [
+      54,
+      52
+     ]
+    },
+    {
+     "label": "Push in",
+     "seconds": 2.0,
+     "ease": "inOut",
+     "rail": [
+      "cam05",
+      {
+       "at": "cam05",
+       "toward": "scene",
+       "dolly": 1.0
+      }
+     ],
+     "look": [
+      "scene",
+      "pan"
+     ],
+     "lens": [
+      52,
+      46
+     ]
+    },
+    {
+     "label": "Into the bullet time",
+     "seconds": 0.6,
+     "ease": "linear",
+     "look": "torch",
+     "lens": 50,
+     "at": "cam19"
+    },
+    {
+     "label": "Bullet time: the flame",
+     "seconds": 2.6,
+     "video": "hold",
+     "ease": "whip",
+     "rail": [
+      "cam19",
+      "cam18",
+      "cam16",
+      "cam15",
+      "cam14",
+      "cam13",
+      "cam12"
+     ],
+     "look": "torch",
+     "lens": 50,
+     "roll": {
+      "swing": 4
+     }
+    },
+    {
+     "label": "Out of the bullet time",
+     "seconds": 0.6,
+     "ease": "linear",
+     "look": "torch",
+     "lens": [
+      50,
+      52
+     ],
+     "at": "cam12"
+    },
+    {
+     "label": "Along the row",
+     "seconds": 5.0,
+     "ease": "inOut",
+     "enter": "dip",
+     "dip": 0.15,
+     "rail": [
+      "cam20",
+      "cam19",
+      "cam18",
+      "cam16",
+      "cam15",
+      "cam14",
+      "cam13",
+      "cam12",
+      "cam11"
+     ],
+     "look": "scene",
+     "lens": [
+      52,
+      50
+     ]
+    },
+    {
+     "label": "Fast arc over the counter",
+     "seconds": 2.2,
+     "ease": "whip",
+     "rail": [
+      "cam09",
+      "cam08",
+      "cam07",
+      "cam06"
+     ],
+     "look": "pan",
+     "lens": 44
+    },
+    {
+     "label": "Shelf sweep",
+     "seconds": 2.6,
+     "ease": "inOut",
+     "rail": [
+      "cam00",
+      "cam05",
+      "cam04",
+      "cam02"
+     ],
+     "look": [
+      "shelf_left",
+      "books_left"
+     ],
+     "lens": [
+      46,
+      42
+     ]
+    },
+    {
+     "label": "Into the bullet time",
+     "seconds": 0.6,
+     "ease": "linear",
+     "at": "cam10",
+     "look": "chest",
+     "lens": 50
+    },
+    {
+     "label": "Bullet time: the cook",
+     "seconds": 3.0,
+     "video": "hold",
+     "ease": "whip",
+     "rail": [
+      "cam10",
+      "cam09",
+      "cam08",
+      "cam07",
+      "cam06",
+      "cam00",
+      "cam05"
+     ],
+     "look": "chest",
+     "lens": 50
+    },
+    {
+     "label": "Out of the bullet time",
+     "seconds": 0.6,
+     "ease": "linear",
+     "look": "chest",
+     "lens": [
+      50,
+      52
+     ],
+     "at": "cam05"
+    },
+    {
+     "label": "Crane up",
+     "seconds": 3.5,
+     "ease": "inOut",
+     "enter": "dip",
+     "dip": 0.15,
+     "rail": [
+      "cam15",
+      "cam00"
+     ],
+     "look": "scene",
+     "lens": 52
+    },
+    {
+     "label": "Fast arc to the shelf",
+     "seconds": 2.0,
+     "ease": "whip",
+     "rail": [
+      "cam00",
+      "cam05"
+     ],
+     "look": [
+      "books_left",
+      "shelf_left"
+     ],
+     "lens": 44
+    },
+    {
+     "label": "Tracking shot",
+     "seconds": 3.0,
+     "ease": "inOut",
+     "rail": [
+      "cam13",
+      "cam14",
+      "cam15"
+     ],
+     "ahead": [
+      "cam13",
+      "cam14",
+      "cam15"
+     ],
+     "tilt": -12,
+     "lens": 50
+    },
+    {
+     "label": "Into the bullet time",
+     "seconds": 0.5,
+     "ease": "linear",
+     "at": "cam18",
+     "look": "torch",
+     "lens": 50
+    },
+    {
+     "label": "Bullet time: low arc",
+     "seconds": 2.4,
+     "video": "hold",
+     "ease": "whip",
+     "rail": [
+      "cam18",
+      "cam16",
+      "cam15",
+      "cam14"
+     ],
+     "look": "torch",
+     "lens": 50,
+     "roll": {
+      "swing": 3
+     }
+    },
+    {
+     "label": "Pan across the room",
+     "seconds": 2.5,
+     "ease": "inOut",
+     "at": "cam06",
+     "look": [
+      "pan",
+      "shelf_left"
+     ],
+     "lens": 50
+    },
+    {
+     "label": "Top shot",
+     "seconds": 2.0,
+     "ease": "inOut",
+     "look": "torch",
+     "lens": [
+      54,
+      52
+     ],
+     "at": "cam01"
+    },
+    {
+     "label": "Wide arc back",
+     "seconds": 4.5,
+     "ease": "inOut",
+     "rail": [
+      "cam05",
+      "cam00",
+      "cam06",
+      "cam07"
+     ],
+     "look": "scene",
+     "lens": [
+      50,
+      54
+     ]
+    },
+    {
+     "label": "Pull back",
+     "seconds": 4.0,
+     "ease": "inOut",
+     "rail": [
+      {
+       "at": "cam06",
+       "toward": "scene",
+       "dolly": 0.8
+      },
+      "cam06",
+      {
+       "at": "cam06",
+       "toward": "scene",
+       "dolly": -0.3
+      }
+     ],
+     "look": "scene",
+     "lens": [
+      46,
+      54
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Cinematic: the long cut",
+   "shots": [
+    {
+     "label": "Wide arc",
+     "seconds": 7.0,
+     "ease": "inOut",
+     "enter": "dip",
+     "rail": [
+      "cam07",
+      "cam06",
+      "cam00",
+      "cam05"
+     ],
+     "look": "scene",
+     "lens": [
+      53,
+      50
+     ]
+    },
+    {
+     "label": "Dolly in",
+     "seconds": 5.0,
+     "ease": "inOut",
+     "rail": [
+      "cam05",
+      {
+       "at": "cam05",
+       "toward": "scene",
+       "dolly": 1.4,
+       "pedestal": -0.2
+      }
+     ],
+     "look": [
+      "scene",
+      "counter"
+     ],
+     "lens": [
+      50,
+      44
+     ]
+    },
+    {
+     "label": "Medium",
+     "seconds": 1.0,
+     "ease": "linear",
+     "at": "cam05",
+     "look": [
+      "chest",
+      "hand"
+     ],
+     "lens": 32
+    },
+    {
+     "label": "Dolly in",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam04",
+      {
+       "at": "cam04",
+       "toward": "pan",
+       "dolly": 0.9
+      }
+     ],
+     "look": "pan",
+     "lens": 25
+    },
+    {
+     "label": "Low angle",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam18",
+      {
+       "at": "cam18",
+       "toward": "pan",
+       "truck": -0.45
+      }
+     ],
+     "look": "pan",
+     "lens": 26
+    },
+    {
+     "label": "Pan",
+     "seconds": 1.0,
+     "ease": "inOut",
+     "at": "cam02",
+     "look": [
+      "plate",
+      "pan"
+     ],
+     "lens": 24
+    },
+    {
+     "label": "Tracking shot",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam13",
+      "cam14",
+      "cam15"
+     ],
+     "ahead": [
+      "cam13",
+      "cam14",
+      "cam15"
+     ],
+     "tilt": -14,
+     "lens": 42
+    },
+    {
+     "label": "Crane",
+     "seconds": 1.0,
+     "ease": "inOut",
+     "rail": [
+      "cam16",
+      "cam06"
+     ],
+     "look": "counter",
+     "lens": 40
+    },
+    {
+     "label": "The shelf",
+     "seconds": 6.0,
+     "ease": "inOut",
+     "rail": [
+      "cam00",
+      "cam05",
+      "cam04",
+      "cam02"
+     ],
+     "look": [
+      "shelf_left",
+      "books_left"
+     ],
+     "lens": [
+      30,
+      24
+     ]
+    },
+    {
+     "label": "Up the shelf",
+     "seconds": 4.0,
+     "ease": "inOut",
+     "at": "cam04",
+     "look": [
+      "books_left",
+      "jars_left"
+     ],
+     "lens": [
+      24,
+      26
+     ]
+    },
+    {
+     "label": "Glass and bottles",
+     "seconds": 5.0,
+     "ease": "inOut",
+     "at": "cam16",
+     "look": [
+      [
+       4.6,
+       3.6,
+       9.6
+      ],
+      [
+       3.3,
+       3.0,
+       10.5
+      ]
+     ],
+     "lens": [
+      26,
+      21
+     ]
+    },
+    {
+     "label": "Mugs and kettle",
+     "seconds": 4.0,
+     "ease": "inOut",
+     "rail": [
+      "cam12",
+      "cam13"
+     ],
+     "look": [
+      "mugs",
+      "kettle"
+     ],
+     "lens": 29
+    },
+    {
+     "label": "Along the row",
+     "seconds": 8.0,
+     "ease": "inOut",
+     "enter": "dip",
+     "dip": 0.2,
+     "rail": [
+      "cam20",
+      "cam19",
+      "cam18",
+      "cam16",
+      "cam15",
+      "cam14",
+      "cam13",
+      "cam12",
+      "cam11"
+     ],
+     "look": "scene",
+     "lens": [
+      50,
+      48
+     ]
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 0.5,
+     "ease": "linear",
+     "rail": [
+      "cam19",
+      {
+       "at": "cam19",
+       "toward": "pan",
+       "dolly": 0.3
+      }
+     ],
+     "look": "pan",
+     "lens": 34
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 2.8,
+     "video": "hold",
+     "ease": "whip",
+     "rail": [
+      {
+       "at": "cam19",
+       "toward": "pan",
+       "dolly": 0.3
+      },
+      "cam18",
+      "cam16",
+      "cam15",
+      "cam14",
+      "cam13",
+      "cam12"
+     ],
+     "look": "pan",
+     "lens": 34,
+     "roll": {
+      "swing": 5
+     }
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 0.5,
+     "ease": "linear",
+     "rail": [
+      "cam12",
+      {
+       "at": "cam12",
+       "toward": "pan",
+       "dolly": 0.4
+      }
+     ],
+     "look": "pan",
+     "lens": [
+      34,
+      32
+     ]
+    },
+    {
+     "label": "Portrait",
+     "seconds": 1.0,
+     "ease": "linear",
+     "at": "cam07",
+     "look": "face",
+     "lens": [
+      27,
+      25
+     ]
+    },
+    {
+     "label": "Tilt",
+     "seconds": 1.0,
+     "ease": "inOut",
+     "at": "cam16",
+     "look": [
+      "hand",
+      "pan"
+     ],
+     "lens": 21
+    },
+    {
+     "label": "Top shot",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam01",
+      {
+       "at": "cam01",
+       "toward": "pan",
+       "dolly": 0.7
+      }
+     ],
+     "look": "pan",
+     "lens": 22
+    },
+    {
+     "label": "Arc",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam09",
+      "cam08",
+      "cam07"
+     ],
+     "look": "pan",
+     "lens": 34
+    },
+    {
+     "label": "Pan",
+     "seconds": 1.0,
+     "ease": "inOut",
+     "at": "cam10",
+     "look": [
+      [
+       3.1,
+       2.95,
+       9.9
+      ],
+      "plate"
+     ],
+     "lens": 20
+    },
+    {
+     "label": "Slow motion",
+     "seconds": 4.0,
+     "video": 0.25,
+     "ease": "inOut",
+     "enter": "dip",
+     "dip": 0.18,
+     "rail": [
+      "cam14",
+      {
+       "at": "cam14",
+       "toward": "pan",
+       "dolly": 1.2,
+       "pedestal": 0.15
+      }
+     ],
+     "look": "pan",
+     "lens": [
+      33,
+      28
+     ]
+    },
+    {
+     "label": "Crane",
+     "seconds": 5.0,
+     "ease": "inOut",
+     "enter": "dip",
+     "dip": 0.16,
+     "rail": [
+      "cam15",
+      "cam00"
+     ],
+     "look": "scene",
+     "lens": 50
+    },
+    {
+     "label": "Pull back",
+     "seconds": 4.0,
+     "ease": "inOut",
+     "rail": [
+      {
+       "at": "cam06",
+       "toward": "scene",
+       "dolly": 1.0
+      },
+      "cam06",
+      {
+       "at": "cam06",
+       "toward": "scene",
+       "dolly": -0.3
+      }
+     ],
+     "look": "scene",
+     "lens": [
+      44,
+      54
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Cinematic: quick cuts",
+   "shots": [
+    {
+     "label": "Wide",
+     "seconds": 1.0,
+     "ease": "linear",
+     "enter": "dip",
+     "at": "cam06",
+     "look": "scene",
+     "lens": [
+      54,
+      51
+     ]
+    },
+    {
+     "label": "Wide",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam14",
+      {
+       "at": "cam14",
+       "toward": "scene",
+       "truck": 0.5
+      }
+     ],
+     "look": "scene",
+     "lens": 50
+    },
+    {
+     "label": "Medium",
+     "seconds": 1.0,
+     "ease": "linear",
+     "at": "cam05",
+     "look": [
+      "chest",
+      "hand"
+     ],
+     "lens": 32
+    },
+    {
+     "label": "Dolly in",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam04",
+      {
+       "at": "cam04",
+       "toward": "pan",
+       "dolly": 0.9
+      }
+     ],
+     "look": "pan",
+     "lens": 25
+    },
+    {
+     "label": "Low angle",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam18",
+      {
+       "at": "cam18",
+       "toward": "pan",
+       "truck": -0.45
+      }
+     ],
+     "look": "pan",
+     "lens": 26
+    },
+    {
+     "label": "Pan",
+     "seconds": 1.0,
+     "ease": "inOut",
+     "at": "cam02",
+     "look": [
+      "plate",
+      "pan"
+     ],
+     "lens": 24
+    },
+    {
+     "label": "Tracking shot",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam13",
+      "cam14",
+      "cam15"
+     ],
+     "ahead": [
+      "cam13",
+      "cam14",
+      "cam15"
+     ],
+     "tilt": -14,
+     "lens": 42
+    },
+    {
+     "label": "Crane",
+     "seconds": 1.0,
+     "ease": "inOut",
+     "rail": [
+      "cam16",
+      "cam06"
+     ],
+     "look": "counter",
+     "lens": 40
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 0.5,
+     "ease": "linear",
+     "rail": [
+      "cam19",
+      {
+       "at": "cam19",
+       "toward": "pan",
+       "dolly": 0.3
+      }
+     ],
+     "look": "pan",
+     "lens": 30
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 2.8,
+     "video": "hold",
+     "ease": "whip",
+     "rail": [
+      {
+       "at": "cam19",
+       "toward": "pan",
+       "dolly": 0.3
+      },
+      "cam18",
+      "cam16",
+      "cam15",
+      "cam14",
+      "cam13",
+      "cam12"
+     ],
+     "look": "pan",
+     "lens": 30,
+     "roll": {
+      "swing": 5
+     }
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 0.5,
+     "ease": "linear",
+     "rail": [
+      "cam12",
+      {
+       "at": "cam12",
+       "toward": "pan",
+       "dolly": 0.4
+      }
+     ],
+     "look": "pan",
+     "lens": [
+      30,
+      28
+     ]
+    },
+    {
+     "label": "Portrait",
+     "seconds": 1.0,
+     "ease": "linear",
+     "at": "cam07",
+     "look": "face",
+     "lens": [
+      27,
+      25
+     ]
+    },
+    {
+     "label": "Tilt",
+     "seconds": 1.0,
+     "ease": "inOut",
+     "at": "cam16",
+     "look": [
+      "hand",
+      "pan"
+     ],
+     "lens": 21
+    },
+    {
+     "label": "Top shot",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam01",
+      {
+       "at": "cam01",
+       "toward": "pan",
+       "dolly": 0.7
+      }
+     ],
+     "look": "pan",
+     "lens": 22
+    },
+    {
+     "label": "Arc",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam09",
+      "cam08",
+      "cam07"
+     ],
+     "look": "pan",
+     "lens": 34
+    },
+    {
+     "label": "Pan",
+     "seconds": 1.0,
+     "ease": "inOut",
+     "at": "cam10",
+     "look": [
+      [
+       3.1,
+       2.95,
+       9.9
+      ],
+      "plate"
+     ],
+     "lens": 20
+    },
+    {
+     "label": "Slow motion",
+     "seconds": 4.0,
+     "video": 0.25,
+     "ease": "inOut",
+     "enter": "dip",
+     "dip": 0.18,
+     "rail": [
+      "cam14",
+      {
+       "at": "cam14",
+       "toward": "pan",
+       "dolly": 1.7,
+       "pedestal": 0.15
+      }
+     ],
+     "look": "pan",
+     "lens": [
+      25,
+      20
+     ]
+    },
+    {
+     "label": "Zoom out",
+     "seconds": 1.0,
+     "ease": "out",
+     "enter": "dip",
+     "dip": 0.14,
+     "at": "cam05",
+     "look": [
+      "pan",
+      "scene"
+     ],
+     "lens": [
+      24,
+      46
+     ]
+    },
+    {
+     "label": "Wide",
+     "seconds": 1.0,
+     "ease": "linear",
+     "rail": [
+      "cam06",
+      {
+       "at": "cam06",
+       "toward": "scene",
+       "dolly": -0.25
+      }
+     ],
+     "look": "scene",
+     "lens": [
+      51,
+      54
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Cinematic: slow motion",
+   "shots": [
+    {
+     "label": "Arc",
+     "seconds": 5.0,
+     "video": "hold",
+     "ease": "inOut",
+     "enter": "dip",
+     "rail": [
+      "cam07",
+      "cam06",
+      "cam00",
+      "cam05"
+     ],
+     "look": "pan",
+     "lens": [
+      46,
+      40
+     ]
+    },
+    {
+     "label": "Dolly in",
+     "seconds": 4.0,
+     "video": 0.25,
+     "ease": "inOut",
+     "rail": [
+      "cam05",
+      {
+       "at": "cam05",
+       "toward": "pan",
+       "dolly": 1.9,
+       "pedestal": -0.25
+      }
+     ],
+     "look": "pan",
+     "lens": [
+      40,
+      33
+     ]
+    },
+    {
+     "label": "Cut",
+     "seconds": 0.6,
+     "video": 0.5,
+     "ease": "out",
+     "enter": "dip",
+     "dip": 0.1,
+     "rail": [
+      "cam18",
+      {
+       "at": "cam18",
+       "toward": "pan",
+       "dolly": 0.5
+      }
+     ],
+     "look": "pan",
+     "lens": 21
+    },
+    {
+     "label": "Cut",
+     "seconds": 0.5,
+     "video": 0.5,
+     "ease": "linear",
+     "rail": [
+      "cam02",
+      {
+       "at": "cam02",
+       "toward": "pan",
+       "truck": -0.35
+      }
+     ],
+     "look": "pan",
+     "lens": 19
+    },
+    {
+     "label": "Cut",
+     "seconds": 0.5,
+     "video": 0.5,
+     "ease": "out",
+     "at": "cam15",
+     "look": [
+      "hand",
+      "pan"
+     ],
+     "lens": 20
+    },
+    {
+     "label": "Cut",
+     "seconds": 0.5,
+     "video": 0.5,
+     "ease": "in",
+     "at": "cam08",
+     "look": "pan",
+     "lens": [
+      27,
+      18
+     ]
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 0.5,
+     "ease": "linear",
+     "enter": "dip",
+     "dip": 0.16,
+     "rail": [
+      "cam19",
+      {
+       "at": "cam19",
+       "toward": "pan",
+       "dolly": 0.3
+      }
+     ],
+     "look": "pan",
+     "lens": 30
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 2.6,
+     "video": "hold",
+     "ease": "whip",
+     "rail": [
+      {
+       "at": "cam19",
+       "toward": "pan",
+       "dolly": 0.3
+      },
+      "cam18",
+      "cam16",
+      "cam15",
+      "cam14",
+      "cam13",
+      "cam12"
+     ],
+     "look": "pan",
+     "lens": 30,
+     "roll": {
+      "swing": 5
+     }
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 2.0,
+     "video": 0.25,
+     "ease": "out",
+     "rail": [
+      "cam12",
+      {
+       "at": "cam12",
+       "toward": "pan",
+       "dolly": 0.8
+      }
+     ],
+     "look": "pan",
+     "lens": [
+      30,
+      26
+     ]
+    },
+    {
+     "label": "Crane",
+     "seconds": 4.0,
+     "video": 0.25,
+     "ease": "inOut",
+     "enter": "dip",
+     "rail": [
+      "cam15",
+      "cam00"
+     ],
+     "look": "counter",
+     "lens": 38
+    },
+    {
+     "label": "Pan",
+     "seconds": 4.5,
+     "video": 0.25,
+     "ease": "inOut",
+     "enter": "dip",
+     "at": "cam00",
+     "look": [
+      "oil",
+      "kettle"
+     ],
+     "lens": 19
+    },
+    {
+     "label": "Tracking shot",
+     "seconds": 4.0,
+     "video": 0.25,
+     "ease": "inOut",
+     "enter": "dip",
+     "rail": [
+      "cam13",
+      "cam14",
+      "cam15",
+      "cam16",
+      "cam18"
+     ],
+     "ahead": [
+      "cam13",
+      "cam14",
+      "cam15",
+      "cam16",
+      "cam18"
+     ],
+     "tilt": -14,
+     "lens": 40
+    },
+    {
+     "label": "Tilt and zoom out",
+     "seconds": 4.0,
+     "video": 0.25,
+     "ease": "inOut",
+     "enter": "dip",
+     "at": "cam06",
+     "look": [
+      "pan",
+      "face"
+     ],
+     "lens": [
+      17,
+      30
+     ]
+    },
+    {
+     "label": "Pull back",
+     "seconds": 1.0,
+     "ease": "out",
+     "enter": "dip",
+     "dip": 0.16,
+     "rail": [
+      {
+       "at": "cam00",
+       "toward": "pan",
+       "dolly": 2.0
+      },
+      "cam00"
+     ],
+     "look": "pan",
+     "lookTo": {
+      "as": "cam00"
+     },
+     "lens": [
+      30,
+      50
+     ]
+    },
+    {
+     "label": "Pull back",
+     "seconds": 1.8,
+     "video": "hold",
+     "ease": "linear",
+     "rail": [
+      "cam00",
+      {
+       "at": "cam00",
+       "as": "cam00",
+       "dolly": -0.12
+      }
+     ],
+     "as": "cam00",
+     "lens": 50
+    }
+   ]
+  },
+  {
+   "name": "Slow circle",
+   "shots": [
+    {
+     "label": "Circle",
+     "seconds": 24.0,
+     "ease": "linear",
+     "circle": {
+      "around": "cam00",
+      "radius": 0.5
+     },
+     "look": "scene",
+     "lens": {
+      "breathe": [
+       52,
+       46
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "name": "Tony Scott: the torch",
+   "aspect": 2.39,
+   "optics": {
+    "preset": "anamorphic",
+    "warmth": 0.4,
+    "contrast": 0.3,
+    "lift": 0.0,
+    "vignette": 0.4,
+    "bloom": 1.4,
+    "bloomThreshold": 0.55,
+    "halation": 0.7,
+    "streak": 0.55,
+    "flare": 0.25,
+    "dof": 0.45
+   },
+   "shots": [
+    {
+     "label": "Crash zoom on the flame",
+     "seconds": 0.8,
+     "ease": "in",
+     "enter": "dip",
+     "dip": 0.15,
+     "at": "cam11",
+     "look": "flame",
+     "lens": [
+      44,
+      18
+     ],
+     "focus": "flame"
+    },
+    {
+     "label": "Long lens, slowed",
+     "seconds": 2.6,
+     "ease": "linear",
+     "video": 0.25,
+     "rail": [
+      {
+       "at": "cam07",
+       "toward": "torch",
+       "dolly": 0.4
+      },
+      {
+       "at": "cam07",
+       "toward": "torch",
+       "dolly": 0.7,
+       "truck": 0.25
+      }
+     ],
+     "look": "torch",
+     "lens": 18,
+     "focus": "torch",
+     "roll": {
+      "swing": 3
+     }
+    },
+    {
+     "label": "Snap: the eyes",
+     "seconds": 0.5,
+     "ease": "linear",
+     "video": 2,
+     "at": "cam14",
+     "look": "eyes",
+     "lens": 22,
+     "roll": -5,
+     "focus": "eyes"
+    },
+    {
+     "label": "Snap: the flame",
+     "seconds": 0.5,
+     "ease": "linear",
+     "video": 2,
+     "at": "cam02",
+     "look": "flame",
+     "lens": 20,
+     "focus": "flame"
+    },
+    {
+     "label": "Snap: the pan",
+     "seconds": 0.45,
+     "ease": "linear",
+     "video": 2,
+     "at": "cam18",
+     "look": "pan_rim",
+     "lens": 24,
+     "roll": 6,
+     "focus": "pan_rim"
+    },
+    {
+     "label": "Whip to the face",
+     "seconds": 0.6,
+     "ease": "whip",
+     "at": {
+      "at": "cam05",
+      "toward": "eyes",
+      "dolly": 0.5
+     },
+     "look": "flame",
+     "lookTo": {
+      "look": "eyes"
+     },
+     "lens": 24,
+     "focus": [
+      "flame",
+      "eyes"
+     ]
+    },
+    {
+     "label": "Handheld, the chef",
+     "seconds": 2.4,
+     "ease": "linear",
+     "rail": [
+      {
+       "at": "cam06",
+       "toward": "eyes",
+       "dolly": 1.2,
+       "truck": 0,
+       "pedestal": 0
+      },
+      {
+       "at": "cam06",
+       "toward": "eyes",
+       "dolly": 1.2,
+       "truck": 0.05,
+       "pedestal": 0.03
+      },
+      {
+       "at": "cam06",
+       "toward": "eyes",
+       "dolly": 1.2,
+       "truck": -0.03,
+       "pedestal": 0.06
+      },
+      {
+       "at": "cam06",
+       "toward": "eyes",
+       "dolly": 1.2,
+       "truck": 0.04,
+       "pedestal": -0.02
+      },
+      {
+       "at": "cam06",
+       "toward": "eyes",
+       "dolly": 1.2,
+       "truck": -0.05,
+       "pedestal": 0.02
+      },
+      {
+       "at": "cam06",
+       "toward": "eyes",
+       "dolly": 1.2,
+       "truck": 0.02,
+       "pedestal": 0.05
+      }
+     ],
+     "look": "eyes",
+     "lens": 26,
+     "focus": "eyes",
+     "roll": [
+      -2,
+      2
+     ]
+    },
+    {
+     "label": "Step-printed hold",
+     "seconds": 1.6,
+     "ease": "inOut",
+     "video": "hold",
+     "rail": [
+      {
+       "at": "cam06",
+       "toward": "eyes",
+       "dolly": 1.0
+      },
+      {
+       "at": "cam00",
+       "toward": "eyes",
+       "dolly": 1.0
+      }
+     ],
+     "look": "eyes",
+     "lens": 20,
+     "focus": "eyes"
+    },
+    {
+     "label": "Slow push to the fire",
+     "seconds": 3.0,
+     "ease": "inOut",
+     "video": 0.25,
+     "rail": [
+      "cam16",
+      {
+       "at": "cam16",
+       "toward": "flame",
+       "dolly": 2.2
+      }
+     ],
+     "look": "flame",
+     "lens": [
+      28,
+      20
+     ],
+     "focus": "flame",
+     "optics": [
+      {
+       "preset": "anamorphic",
+       "warmth": 0.4,
+       "contrast": 0.3,
+       "lift": 0.0,
+       "vignette": 0.4,
+       "bloom": 1.4,
+       "bloomThreshold": 0.55,
+       "halation": 0.7,
+       "streak": 0.55,
+       "flare": 0.25,
+       "dof": 0.45
+      },
+      {
+       "preset": "anamorphic",
+       "warmth": 0.4,
+       "contrast": 0.3,
+       "lift": 0.0,
+       "vignette": 0.4,
+       "bloom": 2.2,
+       "bloomThreshold": 0.55,
+       "halation": 0.9,
+       "streak": 0.55,
+       "flare": 0.25,
+       "dof": 0.45
+      }
+     ]
+    },
+    {
+     "label": "Crash zoom out",
+     "seconds": 0.6,
+     "ease": "out",
+     "at": "cam04",
+     "look": [
+      "flame",
+      "scene"
+     ],
+     "lens": [
+      18,
+      46
+     ],
+     "focus": "flame"
+    },
+    {
+     "label": "Telephoto across the counter",
+     "seconds": 3.0,
+     "ease": "inOut",
+     "video": 0.5,
+     "rail": [
+      "cam20",
+      "cam19"
+     ],
+     "look": "salmon",
+     "lens": 18,
+     "focus": "salmon"
+    },
+    {
+     "label": "Snap: the salmon",
+     "seconds": 0.5,
+     "ease": "linear",
+     "video": 2,
+     "at": "cam13",
+     "look": "salmon",
+     "lens": 20,
+     "roll": -4,
+     "focus": "salmon"
+    },
+    {
+     "label": "Snap: the plate",
+     "seconds": 0.5,
+     "ease": "linear",
+     "video": 2,
+     "at": "cam12",
+     "look": "plate",
+     "lens": 24,
+     "focus": "plate"
+    },
+    {
+     "label": "Dutch tilt up the chef",
+     "seconds": 2.2,
+     "ease": "inOut",
+     "video": 0.5,
+     "at": {
+      "at": "cam15",
+      "toward": "eyes",
+      "dolly": 1.0
+     },
+     "look": [
+      "flame",
+      "eyes"
+     ],
+     "lens": 24,
+     "roll": [
+      -9,
+      3
+     ],
+     "focus": [
+      "flame",
+      "eyes"
+     ]
+    },
+    {
+     "label": "Burn out",
+     "seconds": 3.0,
+     "ease": "inOut",
+     "video": 0.25,
+     "rail": [
+      {
+       "at": "cam00",
+       "toward": "scene",
+       "dolly": 1.0
+      },
+      "cam00"
+     ],
+     "look": "scene",
+     "lens": [
+      30,
+      46
+     ],
+     "focus": "chest",
+     "optics": [
+      {
+       "preset": "anamorphic",
+       "warmth": 0.4,
+       "contrast": 0.3,
+       "lift": 0.0,
+       "vignette": 0.4,
+       "bloom": 1.4,
+       "bloomThreshold": 0.55,
+       "halation": 0.7,
+       "streak": 0.55,
+       "flare": 0.25,
+       "dof": 0.45
+      },
+      {
+       "preset": "anamorphic",
+       "warmth": 0.4,
+       "contrast": 0.3,
+       "lift": 0.12,
+       "vignette": 0.4,
+       "bloom": 3,
+       "bloomThreshold": 0.3,
+       "halation": 1,
+       "streak": 0.55,
+       "flare": 0.25,
+       "dof": 0.45
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Michael Bay: hero shot",
+   "aspect": 2.39,
+   "optics": {
+    "preset": "anamorphic",
+    "warmth": 0.55,
+    "contrast": 0.2,
+    "vignette": 0.3,
+    "bloom": 1.0,
+    "bloomThreshold": 0.6,
+    "halation": 0.4,
+    "streak": 0.6,
+    "flare": 0.35,
+    "dof": 0.5
+   },
+   "shots": [
+    {
+     "label": "Low crane up to the hero",
+     "seconds": 5.0,
+     "ease": "inOut",
+     "enter": "dip",
+     "video": 0.5,
+     "rail": [
+      {
+       "at": "cam20",
+       "toward": "chest",
+       "dolly": 0.5,
+       "pedestal": -0.4
+      },
+      "cam16",
+      {
+       "at": "cam05",
+       "toward": "chest",
+       "dolly": 1.0,
+       "pedestal": 0.5
+      }
+     ],
+     "look": [
+      "pan",
+      "eyes"
+     ],
+     "lens": [
+      30,
+      34
+     ],
+     "focus": [
+      "flame",
+      "eyes"
+     ]
+    },
+    {
+     "label": "Low arc, slow motion",
+     "seconds": 7.0,
+     "ease": "inOut",
+     "video": 0.25,
+     "rail": [
+      {
+       "at": "cam20",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.4
+      },
+      {
+       "at": "cam18",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.4
+      },
+      {
+       "at": "cam16",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.4
+      },
+      {
+       "at": "cam15",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.4
+      },
+      {
+       "at": "cam14",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.4
+      },
+      {
+       "at": "cam13",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.4
+      },
+      {
+       "at": "cam11",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.4
+      }
+     ],
+     "look": "eyes",
+     "lens": 26,
+     "focus": "eyes",
+     "roll": {
+      "swing": 6
+     },
+     "optics": {
+      "preset": "anamorphic",
+      "warmth": 0.55,
+      "contrast": 0.2,
+      "vignette": 0.3,
+      "bloom": 1.0,
+      "bloomThreshold": 0.6,
+      "halation": 0.4,
+      "streak": 0.3,
+      "flare": 0.35,
+      "dof": 0.5
+     }
+    },
+    {
+     "label": "Reveal past the bottles",
+     "seconds": 3.5,
+     "ease": "inOut",
+     "video": 0.5,
+     "rail": [
+      {
+       "at": "cam10",
+       "toward": "bottles",
+       "dolly": 1.0
+      },
+      {
+       "at": "cam08",
+       "toward": "chest",
+       "dolly": 1.6
+      }
+     ],
+     "look": [
+      "bottles",
+      "eyes"
+     ],
+     "lens": 26,
+     "focus": [
+      "bottles",
+      "eyes"
+     ]
+    },
+    {
+     "label": "Flare swell",
+     "seconds": 3.0,
+     "ease": "inOut",
+     "video": 0.25,
+     "at": {
+      "at": "cam14",
+      "toward": "flame",
+      "dolly": 1.5
+     },
+     "look": "flame",
+     "lens": 22,
+     "focus": "flame",
+     "optics": [
+      {
+       "preset": "anamorphic",
+       "warmth": 0.55,
+       "contrast": 0.2,
+       "vignette": 0.3,
+       "bloom": 1.0,
+       "bloomThreshold": 0.6,
+       "halation": 0.4,
+       "streak": 0.6,
+       "flare": 0.35,
+       "dof": 0.5
+      },
+      {
+       "preset": "anamorphic",
+       "warmth": 0.55,
+       "contrast": 0.2,
+       "vignette": 0.3,
+       "bloom": 2.2,
+       "bloomThreshold": 0.6,
+       "halation": 0.8,
+       "streak": 1,
+       "flare": 1,
+       "dof": 0.5
+      }
+     ]
+    },
+    {
+     "label": "Snap push",
+     "seconds": 0.8,
+     "ease": "in",
+     "video": 2,
+     "rail": [
+      "cam04",
+      {
+       "at": "cam04",
+       "toward": "flame",
+       "dolly": 2.5
+      }
+     ],
+     "look": "flame",
+     "lens": [
+      34,
+      24
+     ],
+     "focus": "flame"
+    },
+    {
+     "label": "Spin around the torch",
+     "seconds": 3.5,
+     "ease": "inOut",
+     "video": "hold",
+     "circle": {
+      "around": {
+       "at": "cam05",
+       "toward": "torch",
+       "dolly": 2.0
+      },
+      "radius": 0.6,
+      "turns": 0.5,
+      "start": 180
+     },
+     "look": "torch",
+     "lens": 24,
+     "roll": [
+      -8,
+      8
+     ],
+     "focus": "torch"
+    },
+    {
+     "label": "Hero low angle, frozen",
+     "seconds": 2.5,
+     "ease": "inOut",
+     "video": "hold",
+     "rail": [
+      {
+       "at": "cam15",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.5
+      },
+      {
+       "at": "cam14",
+       "toward": "eyes",
+       "dolly": 1.5,
+       "pedestal": -0.5
+      }
+     ],
+     "look": "eyes",
+     "lens": 24,
+     "roll": [
+      -6,
+      6
+     ],
+     "focus": "eyes",
+     "optics": {
+      "preset": "anamorphic",
+      "warmth": 0.55,
+      "contrast": 0.2,
+      "vignette": 0.3,
+      "bloom": 1.0,
+      "bloomThreshold": 0.6,
+      "halation": 0.4,
+      "streak": 0.3,
+      "flare": 0.35,
+      "dof": 0.5
+     }
+    },
+    {
+     "label": "Product shot: the salmon",
+     "seconds": 4.0,
+     "ease": "inOut",
+     "video": 0.5,
+     "rail": [
+      {
+       "at": "cam13",
+       "toward": "salmon",
+       "dolly": 1.5
+      },
+      {
+       "at": "cam12",
+       "toward": "salmon",
+       "dolly": 1.8
+      },
+      {
+       "at": "cam11",
+       "toward": "salmon",
+       "dolly": 1.5
+      }
+     ],
+     "look": "salmon",
+     "lens": 22,
+     "focus": "salmon"
+    },
+    {
+     "label": "Golden pull-back",
+     "seconds": 5.0,
+     "ease": "inOut",
+     "video": 0.5,
+     "rail": [
+      {
+       "at": "cam05",
+       "toward": "chest",
+       "dolly": 2.0
+      },
+      "cam05",
+      {
+       "at": "cam05",
+       "toward": "scene",
+       "dolly": -0.3,
+       "pedestal": 0.5
+      }
+     ],
+     "look": [
+      "eyes",
+      "scene"
+     ],
+     "lens": [
+      24,
+      48
+     ],
+     "focus": [
+      "eyes",
+      "chest"
+     ],
+     "optics": [
+      {
+       "preset": "anamorphic",
+       "warmth": 0.55,
+       "contrast": 0.2,
+       "vignette": 0.3,
+       "bloom": 1.0,
+       "bloomThreshold": 0.6,
+       "halation": 0.4,
+       "streak": 0.6,
+       "flare": 0.35,
+       "dof": 0.5
+      },
+      {
+       "preset": "anamorphic",
+       "warmth": 0.85,
+       "contrast": 0.2,
+       "vignette": 0.3,
+       "bloom": 1.6,
+       "bloomThreshold": 0.6,
+       "halation": 0.4,
+       "streak": 0.6,
+       "flare": 0.35,
+       "dof": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Anamorphic: fire and salmon",
+   "aspect": 2.39,
+   "optics": {
+    "preset": "anamorphic",
+    "streak": 0.45
+   },
+   "shots": [
+    {
+     "label": "Establishing drift",
+     "seconds": 8,
+     "ease": "inOut",
+     "enter": "dip",
+     "rail": [
+      "cam08",
+      "cam07",
+      "cam06",
+      "cam00"
+     ],
+     "look": [
+      "scene",
+      "chest"
+     ],
+     "lens": [
+      44,
+      40
+     ],
+     "focus": "chest"
+    },
+    {
+     "label": "Slow push to the flame",
+     "seconds": 6,
+     "ease": "inOut",
+     "video": 0.5,
+     "rail": [
+      "cam15",
+      {
+       "at": "cam15",
+       "toward": "flame",
+       "dolly": 2.0
+      }
+     ],
+     "look": "flame",
+     "lens": [
+      30,
+      24
+     ],
+     "focus": "flame"
+    },
+    {
+     "label": "Rack focus: flame to the sill",
+     "seconds": 5,
+     "ease": "inOut",
+     "at": {
+      "at": "cam16",
+      "toward": "flame_nutcracker",
+      "dolly": 1.0
+     },
+     "look": "flame_nutcracker",
+     "lens": 38,
+     "focus": [
+      "flame",
+      "nutcracker"
+     ],
+     "optics": {
+      "preset": "anamorphic",
+      "dof": 0.9,
+      "streak": 0.45
+     }
+    },
+    {
+     "label": "Dolly zoom",
+     "seconds": 6,
+     "ease": "inOut",
+     "rail": [
+      {
+       "at": "cam05",
+       "toward": "eyes",
+       "dolly": -0.5
+      },
+      {
+       "at": "cam05",
+       "toward": "eyes",
+       "dolly": 4.5
+      }
+     ],
+     "look": "eyes",
+     "lens": [
+      22,
+      35.9
+     ],
+     "focus": "eyes",
+     "optics": {
+      "preset": "anamorphic",
+      "dof": 0.5,
+      "streak": 0.45
+     }
+    },
+    {
+     "label": "Whip pan",
+     "seconds": 0.7,
+     "ease": "whip",
+     "at": {
+      "at": "cam13",
+      "toward": "salmon",
+      "dolly": 0.8
+     },
+     "look": "flame",
+     "lookTo": {
+      "look": "salmon"
+     },
+     "lens": 28,
+     "focus": [
+      "flame",
+      "salmon"
+     ]
+    },
+    {
+     "label": "The salmon, slow",
+     "seconds": 5,
+     "ease": "out",
+     "video": 0.5,
+     "rail": [
+      {
+       "at": "cam13",
+       "toward": "salmon",
+       "dolly": 0.8
+      },
+      {
+       "at": "cam12",
+       "toward": "salmon",
+       "dolly": 1.6
+      }
+     ],
+     "look": "salmon",
+     "lens": [
+      24,
+      18
+     ],
+     "focus": "salmon",
+     "optics": {
+      "preset": "anamorphic",
+      "dof": 0.8,
+      "streak": 0.45
+     }
+    },
+    {
+     "label": "Bullet time",
+     "seconds": 7,
+     "ease": "inOut",
+     "video": "hold",
+     "enter": "dip",
+     "dip": 0.18,
+     "rail": [
+      {
+       "at": "cam09",
+       "toward": "flame",
+       "dolly": 1.0
+      },
+      {
+       "at": "cam07",
+       "toward": "flame",
+       "dolly": 1.3
+      },
+      {
+       "at": "cam05",
+       "toward": "flame",
+       "dolly": 1.5
+      },
+      {
+       "at": "cam02",
+       "toward": "flame",
+       "dolly": 1.3
+      },
+      {
+       "at": "cam01",
+       "toward": "flame",
+       "dolly": 1.0
+      }
+     ],
+     "look": "hand",
+     "lens": 34,
+     "focus": "flame",
+     "roll": {
+      "swing": 4
+     }
+    },
+    {
+     "label": "Crane up and out",
+     "seconds": 8,
+     "ease": "inOut",
+     "rail": [
+      {
+       "at": "cam14",
+       "toward": "pan",
+       "dolly": 1.5
+      },
+      "cam05",
+      {
+       "at": "cam05",
+       "toward": "scene",
+       "dolly": -0.4,
+       "pedestal": 0.4
+      }
+     ],
+     "look": [
+      "pan",
+      "scene"
+     ],
+     "lens": [
+      26,
+      46
+     ],
+     "focus": [
+      "flame",
+      "chest"
+     ],
+     "optics": [
+      {
+       "preset": "anamorphic",
+       "dof": 0.5,
+       "streak": 0.45
+      },
+      {
+       "preset": "anamorphic",
+       "dof": 0.2,
+       "streak": 0.45
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Portraits through vintage glass",
+   "aspect": 1.85,
+   "optics": "summicron",
+   "shots": [
+    {
+     "label": "Petzval close-up",
+     "seconds": 8,
+     "ease": "inOut",
+     "enter": "dip",
+     "video": 0.5,
+     "rail": [
+      "cam15",
+      {
+       "at": "cam15",
+       "toward": "eyes",
+       "dolly": 1.8
+      }
+     ],
+     "look": "eyes",
+     "lens": [
+      24,
+      20
+     ],
+     "optics": "petzval",
+     "focus": "eyes"
+    },
+    {
+     "label": "Helios arc",
+     "seconds": 8,
+     "ease": "inOut",
+     "rail": [
+      {
+       "at": "cam06",
+       "toward": "eyes",
+       "dolly": 1.0
+      },
+      {
+       "at": "cam00",
+       "toward": "eyes",
+       "dolly": 1.2
+      },
+      {
+       "at": "cam04",
+       "toward": "eyes",
+       "dolly": 1.0
+      }
+     ],
+     "look": "eyes",
+     "lens": 24,
+     "optics": "helios",
+     "focus": "eyes"
+    },
+    {
+     "label": "Rack to the nutcracker",
+     "seconds": 6,
+     "ease": "inOut",
+     "at": {
+      "at": "cam02",
+      "toward": "eyes_nutcracker",
+      "dolly": 0.8
+     },
+     "look": "eyes_nutcracker",
+     "lens": 30,
+     "focus": [
+      "eyes",
+      "nutcracker"
+     ],
+     "optics": {
+      "preset": "summicron",
+      "dof": 0.8
+     }
+    },
+    {
+     "label": "Foreground to the sill",
+     "seconds": 6,
+     "ease": "inOut",
+     "enter": "dip",
+     "dip": 0.18,
+     "at": {
+      "at": "cam09",
+      "toward": "bottles_figurine",
+      "dolly": 1.0
+     },
+     "look": "bottles_figurine",
+     "lens": 40,
+     "focus": [
+      "bottles",
+      "figurine"
+     ],
+     "optics": {
+      "preset": "helios",
+      "dof": 0.8
+     }
+    },
+    {
+     "label": "Tilt and pull: kettle to the painting",
+     "seconds": 6,
+     "ease": "inOut",
+     "rail": [
+      "cam12",
+      "cam13"
+     ],
+     "look": [
+      "kettle",
+      "painting"
+     ],
+     "lens": 26,
+     "focus": [
+      "kettle",
+      "painting"
+     ],
+     "optics": {
+      "preset": "summicron",
+      "dof": 0.8
+     }
+    },
+    {
+     "label": "Pull back to the room",
+     "seconds": 6,
+     "ease": "inOut",
+     "rail": [
+      {
+       "at": "cam00",
+       "toward": "eyes",
+       "dolly": 1.5
+      },
+      "cam00",
+      {
+       "at": "cam00",
+       "toward": "scene",
+       "dolly": -0.3
+      }
+     ],
+     "look": [
+      "eyes",
+      "scene"
+     ],
+     "lens": [
+      24,
+      50
+     ],
+     "optics": [
+      "petzval",
+      "cooke"
+     ],
+     "focus": [
+      "eyes",
+      "chest"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Lens reel",
+   "aspect": "native",
+   "shots": [
+    {
+     "label": "Zeiss: clean and neutral",
+     "seconds": 5,
+     "ease": "in",
+     "rail": [
+      "cam10",
+      "cam09"
+     ],
+     "look": "scene",
+     "lens": 40,
+     "optics": "zeiss",
+     "enter": "dip"
+    },
+    {
+     "label": "Cooke: warm and soft",
+     "seconds": 5,
+     "ease": "linear",
+     "rail": [
+      "cam09",
+      "cam08"
+     ],
+     "look": "scene",
+     "lens": 40,
+     "optics": "cooke",
+     "focus": "chest"
+    },
+    {
+     "label": "Summicron: the subject stands out",
+     "seconds": 5,
+     "ease": "linear",
+     "rail": [
+      "cam08",
+      "cam07"
+     ],
+     "look": "scene",
+     "lens": 32,
+     "optics": "summicron",
+     "focus": "eyes"
+    },
+    {
+     "label": "Helios: the swirl",
+     "seconds": 5,
+     "ease": "linear",
+     "rail": [
+      "cam07",
+      "cam06"
+     ],
+     "look": "scene",
+     "lens": 32,
+     "optics": "helios",
+     "focus": "flame"
+    },
+    {
+     "label": "Petzval: the sharp centre",
+     "seconds": 5,
+     "ease": "linear",
+     "rail": [
+      "cam06",
+      "cam00"
+     ],
+     "look": "scene",
+     "lens": 28,
+     "optics": "petzval",
+     "focus": "eyes"
+    },
+    {
+     "label": "Anamorphic: scope and streaks",
+     "seconds": 5,
+     "ease": "linear",
+     "rail": [
+      "cam00",
+      "cam05"
+     ],
+     "look": "scene",
+     "lens": 40,
+     "optics": "anamorphic",
+     "focus": "flame"
+    },
+    {
+     "label": "Zeiss again: back to clean",
+     "seconds": 5,
+     "ease": "out",
+     "rail": [
+      "cam05",
+      "cam04"
+     ],
+     "look": "scene",
+     "lens": 40,
+     "optics": "zeiss"
+    }
+   ]
+  }
+ ]
+}
