@@ -33,6 +33,7 @@
       <div class="chip" id="chip" hidden></div>
       <div id="meter" hidden></div>
       <div class="controls" id="controls" hidden>
+        <label class="pick" hidden><span>Scene</span><select id="s-scene" aria-label="Choose a scene"></select></label>
         <label class="pick"><span>Tour</span><select id="s-tour" aria-label="Choose a tour: a camera move through the scene, drawn live"></select></label>
         <button type="button" id="b-tour" aria-pressed="true">Stop the tour</button>
         <button type="button" id="b-play" aria-pressed="true">Pause the video</button>
@@ -50,10 +51,10 @@
     <div class="cmp-wrap"><table class="cmp metrics">
       <thead><tr><th>Metric</th><th>Measurement</th><th>Context</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Bit rate</th><td><b>20 Mbit/s</b></td><td>About what a standard 4K film stream needs</td></tr>
+        <tr><th scope="row">Bit rate</th><td><b id="m-rate">20 Mbit/s</b></td><td>About what a standard 4K film stream needs</td></tr>
         <tr><th scope="row">Frame rate</th><td><b>120+ fps</b>, VR capable</td><td>Drawn live at your display's rate, fast enough for a headset</td></tr>
-        <tr><th scope="row">Visual fidelity</th><td><b>31.3 dB</b> PSNR</td><td>Against the original camera footage (higher is better)</td></tr>
-        <tr><th scope="row">Perceptual error</th><td><b>0.148</b> LPIPS</td><td>VGG, against the original camera footage (lower is better)</td></tr>
+        <tr><th scope="row">Visual fidelity</th><td><b id="m-psnr">31.3 dB</b> PSNR</td><td>Against the original camera footage (higher is better)</td></tr>
+        <tr><th scope="row">Perceptual error</th><td><b id="m-lpips">0.148</b> LPIPS</td><td>VGG, against the original camera footage (lower is better)</td></tr>
       </tbody>
     </table></div>
     <p class="fine">Measured on the standard benchmark: the full 300-frame clip of the scene, at the benchmark's resolution, against camera 0, which the benchmark holds out (it is never trained on), from the stream as it is delivered. The clip in the player is the same method trained on all 19 cameras, camera 0 included: what a delivered stream uses, so what only camera 0 sees, such as the far side of the windows, is in the scene too.</p>

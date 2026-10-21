@@ -1,0 +1,14 @@
+{
+ "note": "The scenes the page offers, the first one opened by default. Each plays its own stream and shows its own key numbers (outside numbers only: the stream's bit-rate and the picture against the original footage). player: frames (the viewer in viewer/).",
+ "scenes": [
+  {
+   "id": "flame-salmon",
+   "name": "Flame salmon",
+   "stream": "assets/clip.mkv",
+   "still": "assets/still.jpg",
+   "alt": "A still of the scene: a kitchen, a person searing salmon with a torch",
+   "player": "frames",
+   "metrics": {"bitrate": "20 Mbit/s", "psnr": "31.3 dB", "lpips": "0.148"}
+  }
+ ]
+}
