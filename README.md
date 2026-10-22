@@ -2,7 +2,7 @@
 
 4D Gaussian Splatting video in your browser: real-time volumetric video, streamed as a single video file and drawn live, so the viewpoint is yours to choose.
 
-**Live: https://projectsnowwhite.github.io/website/**
+**Live: https://projectsnowwhite.github.io/**
 
 This repository is the project page: one static page with a live player, the stream's overall numbers and how it stands against the published state of the art (a graph, with the table of the papers' numbers below it).
 
