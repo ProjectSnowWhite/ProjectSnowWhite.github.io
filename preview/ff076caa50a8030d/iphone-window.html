@@ -30,8 +30,9 @@
   #preview.shown { width: 96px; height: auto; opacity: 1; }
   #preview video { width: 100%; display: block; transform: scaleX(-1); }   /* a mirror, as a selfie is seen */
   body.bare #bar, body.bare #readout { display: none; }
-  #show { position: fixed; right: calc(8px + env(safe-area-inset-right)); bottom: calc(8px + env(safe-area-inset-bottom)); display: none; padding: 6px 10px; }
-  body.bare #show { display: block; }
+  #show { position: fixed; right: calc(8px + env(safe-area-inset-right)); bottom: calc(8px + env(safe-area-inset-bottom)); display: none; padding: 4px 9px;
+          opacity: 0.6; font-size: 16px; }
+  body.bare.running #show { display: block; }
   .ok { color: var(--ok); } .bad { color: var(--bad); }
   [hidden] { display: none !important; }
 </style>
@@ -41,10 +42,10 @@
 <canvas id="view" aria-label="A room behind the phone's screen"></canvas>
 <div id="start">
   <div class="panel">
-    <p><b>The phone is a window.</b> A room lies behind the glass; tilting the phone or moving your head shows it from another angle, as through
-    real glass. Hold the phone as you normally do, about 35 cm away, and tap Start.</p>
+    <p><b>The phone is a window.</b> A room lies behind the glass: turning the phone turns the view, like a camera; moving your head shows the
+    room from another angle, as through real glass. Hold the phone as you normally do, about 35 cm away, and tap Start.</p>
     <p>Tilt uses the motion sensors only. Face uses the front camera (the picture stays on the phone, nothing is sent). Fused uses both.
-    Safari asks for each.</p>
+    Safari asks for each. A double tap on the picture recentres; the button in the corner shows the controls.</p>
     <label>Mode <select id="mode0"><option value="fused" selected>Fused (motion + face)</option><option value="tilt">Tilt (motion only)</option>
       <option value="face">Face (camera only)</option></select></label>
     <p></p>
@@ -58,12 +59,12 @@
   <select id="mode" aria-label="What moves the view"><option value="fused">Fused</option><option value="tilt">Tilt</option><option value="face">Face</option><option value="off">Off</option></select>
   <button id="recentre" type="button">Recentre</button>
   <label>Closer <select id="closer" aria-label="What coming closer does"><option value="enlarges">enlarges</option><option value="glass">real glass</option></select></label>
-  <label>Move <input id="upm" type="range" min="1" max="8" step="0.5" aria-label="Scene units the eye moves per metre the head moves"><output id="o-upm"></output></label>
+  <label>Move <input id="upm" type="range" min="1" max="4" step="0.25" aria-label="Scene units the eye moves per metre the head moves"><output id="o-upm"></output></label>
   <label>Camera FOV <input id="fov" type="range" min="50" max="100" step="1" aria-label="The front camera's field of view across its long side"><output id="o-fov"></output></label>
   <button id="cam" type="button" aria-pressed="false">Camera</button>
   <button id="hide" type="button">Hide</button>
 </div>
-<button id="show" class="panel" type="button">Controls</button>
+<button id="show" class="panel" type="button" aria-label="Show the controls and the read-out">&#9776;</button>
 <script type="module" src="./iphone-window.js"></script>
 </body>
 </html>
