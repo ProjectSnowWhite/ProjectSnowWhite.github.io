@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,7 +27,6 @@
   body.immersive #ui { display: block; }
   body.nostats #readout { display: none; }
 </style>
-
 <style>#readout,#stats{display:none!important}</style>
 </head>
 <body class="nostats">
@@ -48,6 +46,7 @@
     <option value="0.25">0.25x</option><option value="0.5">0.5x</option><option value="1" selected>1x</option></select></label>
   <button id="stats" type="button" aria-pressed="true">Stats</button>
   <button id="full" type="button">Full screen</button>
+  <button id="immersion" type="button" hidden>Immersion</button>
 </div>
 <button id="ui" type="button" aria-label="Show the controls">Controls</button>
 <script type="module" src="./player.js"></script>

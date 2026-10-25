@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>iPhone window</title>
+<style>
+  :root { color-scheme: dark; --bg: #0b0b0c; --panel: rgba(18, 18, 20, 0.86); --ink: #e6e6e6; --muted: #9a9aa0; --line: #2a2a2e; --ok: #7fd18b; --bad: #ff8a7a; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 14px/1.4 system-ui, sans-serif; overflow: hidden; }
+  #view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+  #start { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; }
+  #start .panel { max-width: 26em; padding: 16px; }
+  #start p { color: var(--muted); margin: 0 0 12px; }
+  #readout { position: fixed; left: calc(8px + env(safe-area-inset-left)); top: calc(8px + env(safe-area-inset-top)); padding: 6px 8px;
+             font: 11px/1.45 ui-monospace, monospace; white-space: pre; color: var(--muted); }
+  #bar { position: fixed; left: calc(8px + env(safe-area-inset-left)); right: calc(8px + env(safe-area-inset-right)); bottom: calc(8px + env(safe-area-inset-bottom));
+         display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; padding: 8px 10px; }
+  button, select { background: #1d1d21; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; font: inherit; }
+  #go { background: #24476e; border-color: #24476e; color: #fff; padding: 10px 18px; }
+  label { color: var(--muted); display: flex; gap: 6px; align-items: center; }
+  input[type=range] { width: 7em; }
+  #preview { position: fixed; right: calc(8px + env(safe-area-inset-right)); top: calc(8px + env(safe-area-inset-top)); width: 1px; height: 1px; opacity: 0;
+             overflow: hidden; pointer-events: none; border-radius: 6px; }
+  #preview.shown { width: 96px; height: auto; opacity: 1; }
+  #preview video { width: 100%; display: block; transform: scaleX(-1); }   /* a mirror, as a selfie is seen */
+  body.bare #bar, body.bare #readout { display: none; }
+  #show { position: fixed; right: calc(8px + env(safe-area-inset-right)); bottom: calc(8px + env(safe-area-inset-bottom)); display: none; padding: 6px 10px; }
+  body.bare #show { display: block; }
+  .ok { color: var(--ok); } .bad { color: var(--bad); }
+  [hidden] { display: none !important; }
+</style>
+
+</head>
+<body>
+<canvas id="view" aria-label="A room behind the phone's screen"></canvas>
+<div id="start">
+  <div class="panel">
+    <p><b>The phone is a window.</b> A room lies behind the glass; tilting the phone or moving your head shows it from another angle, as through
+    real glass. Hold the phone as you normally do, about 35 cm away, and tap Start.</p>
+    <p>Tilt uses the motion sensors only. Face uses the front camera (the picture stays on the phone, nothing is sent). Fused uses both.
+    Safari asks for each.</p>
+    <label>Mode <select id="mode0"><option value="fused" selected>Fused (motion + face)</option><option value="tilt">Tilt (motion only)</option>
+      <option value="face">Face (camera only)</option></select></label>
+    <p></p>
+    <button id="go" type="button">Start</button>
+    <p id="why" class="bad"></p>
+  </div>
+</div>
+<div id="readout" class="panel" hidden></div>
+<div id="preview" aria-hidden="true"></div>
+<div id="bar" class="panel" hidden>
+  <select id="mode" aria-label="What moves the view"><option value="fused">Fused</option><option value="tilt">Tilt</option><option value="face">Face</option><option value="off">Off</option></select>
+  <button id="recentre" type="button">Recentre</button>
+  <label>Closer <select id="closer" aria-label="What coming closer does"><option value="enlarges">enlarges</option><option value="glass">real glass</option></select></label>
+  <label>Move <input id="upm" type="range" min="1" max="8" step="0.5" aria-label="Scene units the eye moves per metre the head moves"><output id="o-upm"></output></label>
+  <label>Camera FOV <input id="fov" type="range" min="50" max="100" step="1" aria-label="The front camera's field of view across its long side"><output id="o-fov"></output></label>
+  <button id="cam" type="button" aria-pressed="false">Camera</button>
+  <button id="hide" type="button">Hide</button>
+</div>
+<button id="show" class="panel" type="button">Controls</button>
+<script type="module" src="./iphone-window.js"></script>
+</body>
+</html>
