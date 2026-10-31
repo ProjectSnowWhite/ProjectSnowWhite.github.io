@@ -26,11 +26,32 @@
         border-radius: 8px; padding: 6px 10px; font: inherit; }
   body.immersive #ui { display: block; }
   body.nostats #readout { display: none; }
+  /* a comparison: the scene on the left under the one on the right, cut at the divider; the view's drags land on #pad, over both */
+  #left { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  #pad { position: fixed; inset: 0; touch-action: none; }
+  #divider { position: fixed; top: 0; bottom: 0; width: 44px; margin-left: -22px; cursor: ew-resize; touch-action: none; }
+  #divider::before { content: ""; position: absolute; left: 21px; top: 0; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.85); box-shadow: 0 0 3px rgba(0, 0, 0, 0.7); }
+  #divider::after { content: "\2039\00a0\203A"; position: absolute; left: 4px; top: 50%; width: 36px; height: 36px; margin-top: -18px; border-radius: 50%; background: var(--panel);
+                    border: 1px solid rgba(255, 255, 255, 0.85); box-sizing: border-box; color: var(--ink); font: 18px/32px system-ui, sans-serif; text-align: center; }
+  .name { position: fixed; top: 12px; display: flex; align-items: center; gap: 2px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 2px 4px 2px 10px; }
+  .name[hidden], #divider[hidden], #pad[hidden], #left[hidden] { display: none; }
+  .name span { font-weight: 600; padding: 4px 6px 4px 0; }
+  .name button { width: 30px; height: 30px; background: none; color: var(--ink); border: 0; border-radius: 6px; font: 18px/1 system-ui, sans-serif; cursor: pointer; }
+  .name button:hover { background: #2a2a2e; }
+  #nameLeft { left: 12px; }
+  #nameRight { right: 12px; }
+  body.immersive .name { display: none; }
+  body.compare #readout { top: 58px; }
 </style>
 <style>#readout,#stats{display:none!important}</style>
 </head>
 <body class="nostats">
+<canvas id="left" aria-label="The scene on the left, drawn live" hidden></canvas>
 <canvas id="view" tabindex="0" aria-label="The cube, drawn live"></canvas>
+<div id="pad" hidden></div>
+<div id="divider" role="separator" aria-label="Drag to compare the two scenes" hidden></div>
+<div id="nameLeft" class="name" hidden><span></span><button type="button" hidden>&times;</button></div>
+<div id="nameRight" class="name" hidden><span></span><button type="button" hidden>&times;</button></div>
 <div id="readout" aria-live="polite"></div>
 <div id="note">Loading ...</div>
 <div id="bar">
@@ -47,8 +68,9 @@
   <button id="stats" type="button" aria-pressed="true">Stats</button>
   <button id="full" type="button">Full screen</button>
   <button id="immersion" type="button" hidden>Immersion</button>
+  <button id="scenes" type="button" hidden>Scenes</button>
 </div>
 <button id="ui" type="button" aria-label="Show the controls">Controls</button>
-<script type="module" src="./player.js?v=8f9a2ee7c4"></script>
+<script type="module" src="./player.js?v=f49aa87ed1"></script>
 </body>
 </html>
