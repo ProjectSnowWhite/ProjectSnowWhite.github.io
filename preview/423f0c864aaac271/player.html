@@ -22,6 +22,8 @@
   #note { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); pointer-events: none; }
   /* full screen where the browser cannot make a page full screen (an iPhone): the controls hidden, a small button brings them back */
   body.immersive #bar, body.immersive #readout { display: none; }
+  #black { position: fixed; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+  #bar label[hidden] { display: none; }
   #ui { position: fixed; right: 12px; top: 12px; display: none; background: var(--panel); color: var(--ink); border: 1px solid var(--line);
         border-radius: 8px; padding: 6px 10px; font: inherit; }
   body.immersive #ui { display: block; }
@@ -54,10 +56,13 @@
 <div id="nameRight" class="name" hidden><span></span><button type="button" hidden>&times;</button></div>
 <div id="readout" aria-live="polite"></div>
 <div id="note">Loading ...</div>
+<div id="black" aria-hidden="true"></div>
 <div id="bar">
   <button id="play" type="button" aria-pressed="true">Pause</button>
   <input id="time" type="range" min="0" max="0" step="0.01" value="0" aria-label="The moment">
   <label>Camera <select id="cam" aria-label="Go to one of the original cameras"></select></label>
+  <label id="tourBox" hidden>Tour <select id="tour" aria-label="A tour of the scene: the camera moves, the video plays on as it is set">
+    <option value="-1" selected>Off</option></select></label>
   <label>Render <select id="scale" aria-label="Render resolution: Auto (the render governor) or a fixed share of the screen's own pixels">
     <option value="auto" selected>Auto</option><option value="0.5">50 %</option><option value="0.75">75 %</option><option value="1">100 %</option>
     <option value="1.5">150 %</option><option value="2">200 %</option></select></label>
@@ -71,6 +76,6 @@
   <button id="scenes" type="button" hidden>Scenes</button>
 </div>
 <button id="ui" type="button" aria-label="Show the controls">Controls</button>
-<script type="module" src="./player.js?v=9943a9870b"></script>
+<script type="module" src="./player.js?v=75a1c4fb51"></script>
 </body>
 </html>
