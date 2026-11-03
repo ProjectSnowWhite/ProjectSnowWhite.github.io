@@ -1,6 +1,20 @@
 {
- "note": "The scenes the page offers, the first one opened by default. Each plays its own stream and shows its own key numbers (outside numbers only: the stream's bit-rate and the picture against the original footage). player: frames (the viewer in viewer/).",
+ "note": "The scenes the page offers, the first one opened by default. Each plays its own stream and shows its own key numbers (outside numbers only: the stream's bit-rate and the picture against the camera footage) and how they were measured (fine). player: frames (the viewer in viewer/) or cube (cubeplayer/).",
  "scenes": [
+  {
+   "id": "cook-spinach",
+   "name": "Cook spinach",
+   "stream": "assets/spinach.mkv",
+   "still": "assets/spinach.jpg",
+   "alt": "A still of the scene: a kitchen, a person stirring spinach in a pan with tongs",
+   "player": "cube",
+   "metrics": {
+    "bitrate": "24.9 Mbit/s",
+    "psnr": "34.1 dB",
+    "lpips": "0.142"
+   },
+   "fine": "Measured on the 2-second piece of the scene the stream holds (frames 240 - 299), at the benchmark's resolution, against camera 0, which this training holds out (it is never trained on), drawn from the stream as the player draws it. The input videos are colour-corrected to the reference camera before training; published methods are scored on uncorrected videos."
+  },
   {
    "id": "flame-salmon",
    "name": "Flame salmon",
@@ -8,7 +22,11 @@
    "still": "assets/still.jpg",
    "alt": "A still of the scene: a kitchen, a person searing salmon with a torch",
    "player": "frames",
-   "metrics": {"bitrate": "20 Mbit/s", "psnr": "31.3 dB", "lpips": "0.148"}
+   "metrics": {
+    "bitrate": "20 Mbit/s",
+    "psnr": "31.3 dB",
+    "lpips": "0.148"
+   }
   }
  ]
 }
