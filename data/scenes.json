@@ -13,7 +13,7 @@
     "psnr": "34.1 dB",
     "lpips": "0.142"
    },
-   "fine": "Measured on the 2-second piece of the scene the stream holds (frames 240 - 299), at the benchmark's resolution, against camera 0, which this training holds out (it is never trained on), drawn from the stream as the player draws it. The input videos are colour-corrected to the reference camera before training; published methods are scored on uncorrected videos."
+   "fine": "Measured on the 2-second piece of the scene the stream holds (frames 240 - 299), at the benchmark's resolution, against camera 0, which this training holds out (it is never trained on), drawn from the stream at the benchmark's resolution, one drawn pixel a camera pixel, without the player's own filter. The input videos are colour-corrected to the reference camera before training; published methods are scored on uncorrected videos."
   },
   {
    "id": "flame-salmon",
