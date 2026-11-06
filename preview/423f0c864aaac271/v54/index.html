@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>V54 long block</title>
+<style>body{margin:0 auto;max-width:900px;padding:24px 16px;background:#0b0b0c;color:#e6e6e6;font:16px/1.5 system-ui,sans-serif}img{width:100%;height:auto;border-radius:4px}
+table{border-collapse:collapse;font-variant-numeric:tabular-nums;margin:8px 0 16px}td,th{padding:3px 12px;text-align:right;border-bottom:1px solid #26262a}th{color:#9a9aa0;font-weight:600}p,li{color:#c9c9cf}h2{font-size:17px;margin-top:28px}a{color:#9cc4ff}</style></head><body>
+<p><a href="index.html">Back to the list</a></p>
+<h1 style="font-size:20px">V54 - Cook spinach, 4 seconds in one block: the long block at the short block's quality</h1>
+<p>One change to the training of a 120-frame block (frames 180 - 299, half size): the penalty that keeps splats faint and small now acts on a splat only at the moments a camera actually sees it, instead of at every moment. Before, a splat seen in a few of the 120 frames was pushed down at all the others, died, and was placed again elsewhere - 31.5 million such moves in one training, during which the picture stopped improving.</p>
+<h2>Held-out camera (a view the training never saw)</h2>
+<table><tr><th></th><th>whole picture</th><th>what moves</th></tr>
+<tr><td style="text-align:left">before (Q105b, 120 frames)</td><td>35.50 dB</td><td>33.72 dB</td></tr>
+<tr><td style="text-align:left"><b>this (Q106, 120 frames)</b></td><td><b>36.47 dB</b></td><td><b>34.41 dB</b></td></tr>
+<tr><td style="text-align:left">the 2-second block (Q105a, 60 frames)</td><td>36.48 dB</td><td>33.94 dB</td></tr></table>
+<p>The 4-second block now reaches the 2-second block's quality, and what moves is better than in it. Splats moved during the training: 0.5 million instead of 31.5 million; the training took 4.2 hours instead of 5.0.</p>
+<h2>Seen at full size</h2>
+<p>Columns: before | this | the photograph. Rows: two moments. The hand by the apron has its fingers and its edge back; the spinach leaves are sharper.</p>
+<img src="hand.jpg" alt="The hand and the pan: before, this change, and the photograph, at two moments">
+<h2>During the training (held-out camera, dB)</h2>
+<table><tr><th>iteration</th><th>before</th><th>this</th><th>before, what moves</th><th>this, what moves</th></tr><tr><td>10,000</td><td>31.68</td><td>32.99</td><td>27.08</td><td>28.13</td></tr><tr><td>20,000</td><td>33.46</td><td>35.13</td><td>27.54</td><td>30.11</td></tr><tr><td>30,000</td><td>34.40</td><td>36.01</td><td>29.41</td><td>32.21</td></tr><tr><td>50,000</td><td>34.65</td><td>36.38</td><td>30.32</td><td>33.61</td></tr><tr><td>70,000</td><td>34.35</td><td>36.40</td><td>29.95</td><td>33.85</td></tr><tr><td>90,000</td><td>34.58</td><td>36.36</td><td>31.08</td><td>34.25</td></tr><tr><td>100,000</td><td>34.90</td><td>36.37</td><td>32.03</td><td>34.15</td></tr><tr><td>110,000</td><td>35.09</td><td>36.31</td><td>32.45</td><td>33.99</td></tr><tr><td>120,000</td><td>35.26</td><td>36.41</td><td>32.88</td><td>34.41</td></tr></table>
+<p>Before, the picture stood still from iteration 22,000 to 98,000 and only rose once the moves stopped at 100,000. With the change it is ahead from the start and level from 50,000.</p>
+<h2>Known issues</h2>
+<p>Read on one held-out camera, one training each: the gain is several times the usual spread, but it is one comparison. 85 % of the splats end nearly invisible (below 2 % opacity): capacity that does not draw anything. That is the next thing to fix, then the same at 300 frames. No stream yet: this page shows the training's own renders; the playable stream follows.</p>
+</body></html>
