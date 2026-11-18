@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>V64 - lives</title>
+<style>body{font-family:system-ui,sans-serif;background:#111;color:#ddd;margin:16px;max-width:1400px}h1{font-size:20px}h2{font-size:16px;margin:20px 0 6px}
+h3{font-size:14px;margin:16px 0 4px;color:#ccc}.res{background:#3a2a10;border:1px solid #a87b2a;padding:10px;border-radius:6px}
+img{image-rendering:pixelated;display:block;max-width:100%;height:auto}.bar{position:sticky;top:0;background:#111;padding:6px 0}button{margin-right:6px}
+table{border-collapse:collapse;font-size:13px}td,th{border:1px solid #444;padding:3px 8px;text-align:right}a{color:#9cf}</style></head><body>
+<h1>V64 - q252e: lives, NOT ADOPTED YET (the held-out camera, frames 270 - 299)</h1>
+<p class="res"><b>Read this first.</b> q252e is q243e (300 frames in one block) with ONE change: each moving splat gets a life - it is born and
+fades within the block instead of being present at every frame (SharpTimeGS' lives). Where the scene moves it is clearly better: the frame-mean on
+the moving pixels 36.13 against 34.42 dB (+1.71), and the tongs at the pan are solid with the photograph's bright line where q243e draws a faded
+double streak (frames 270 and 299). But the cells on plain still surfaces fell (42 to 40 dB on some of them; the median cell 41.01 against
+41.38): the moving splats took rows from the still room. So it is not adopted as is - the next build (Q253e, the life's cost on) aims to keep
+the gain and give the still room its rows back. In the stills the loss is not visible; judge it in motion below.</p>
+<table><tr><th></th><th>q243e</th><th>q252e (lives)</th><th>difference</th></tr>
+<tr><td style="text-align:left">whole picture, frame-mean</td><td>38.09</td><td>38.61</td><td>+0.52</td></tr>
+<tr><td style="text-align:left">moving pixels, frame-mean</td><td>34.42</td><td>36.13</td><td>+1.71</td></tr>
+<tr><td style="text-align:left">median cell</td><td>41.38</td><td>41.01</td><td>-0.37</td></tr>
+<tr><td style="text-align:left">median moving cell</td><td>39.13</td><td>38.87</td><td>-0.26</td></tr></table>
+<p style="font-size:12px;color:#999">dB, THE SCORE direct (score_stream.py) on the held-out camera, frames 270 - 299 of the 300-frame block, nothing fitted;
+records dev/split/direct_q243e.json and direct_q252e.json (`mean`: psnr, psnr_moving, psnr_cells, psnr_moving_cells).</p>
+<h2>In motion: q243e | q252e | the photograph</h2>
+<div class="bar"><button id="p">pause</button><button id="s">slower</button><button id="f">faster</button><span id="t"></span>
+ - <a href="V64_q243e_q252e_photo_270_299.mkv" download>the lossless MKV (13 MB)</a></div>
+<img id="film" alt="film">
+<h2>The cells, four frames each (270 / 280 / 290 / 299): context with the cell outlined red, then the cell enlarged</h2>
+<h3>(19,15): the tongs</h3><img class="sheet" src="sheet_cell_19_15.png" alt="cell_19_15">
+<h3>(16,13): sill</h3><img class="sheet" src="sheet_cell_16_13.png" alt="cell_16_13">
+<h3>(16,12): sill</h3><img class="sheet" src="sheet_cell_16_12.png" alt="cell_16_12">
+<h3>(17,13): sill</h3><img class="sheet" src="sheet_cell_17_13.png" alt="cell_17_13">
+<h3>(17,12): sill</h3><img class="sheet" src="sheet_cell_17_12.png" alt="cell_17_12">
+<h3>(3,2): fell -6.42</h3><img class="sheet" src="sheet_cell_3_2.png" alt="cell_3_2">
+<h3>(2,20): fell -5.67</h3><img class="sheet" src="sheet_cell_2_20.png" alt="cell_2_20">
+<h3>(0,31): fell -5.48</h3><img class="sheet" src="sheet_cell_0_31.png" alt="cell_0_31">
+<h3>(3,21): moving, fell -6.85</h3><img class="sheet" src="sheet_cell_3_21.png" alt="cell_3_21">
+<h3>(9,30): moving, fell</h3><img class="sheet" src="sheet_cell_9_30.png" alt="cell_9_30">
+<h3>(9,17): moving, fell</h3><img class="sheet" src="sheet_cell_9_17.png" alt="cell_9_17">
+<p style="font-size:12px;color:#999">Lossless frames as the score drew them (calibration pose, the preparation's sync clock, nothing fitted), quarter size,
+enlarged without smoothing. One held-out camera. Train-only builds: no stream, no bit rate yet.</p>
+<script>
+const F=[270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299];let i=0,ms=200,run=true;const im=document.getElementById('film');
+function show(){im.src=`film/f_${F[i]}.png`;document.getElementById('t').textContent=` frame ${F[i]} - ${Math.round(1000/ms)} frames a second`;}
+function tick(){if(run){i=(i+1)%F.length;show();}setTimeout(tick,ms);}
+document.getElementById('p').onclick=e=>{run=!run;e.target.textContent=run?'pause':'play';};
+document.getElementById('s').onclick=()=>{ms=Math.min(ms*1.5,2000);};document.getElementById('f').onclick=()=>{ms=Math.max(ms/1.5,33);};
+F.forEach(f=>{const p=new Image();p.src=`film/f_${f}.png`;});show();tick();
+</script></body></html>
