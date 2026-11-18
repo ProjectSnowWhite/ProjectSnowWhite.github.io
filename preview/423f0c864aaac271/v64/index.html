@@ -1,16 +1,11 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex"><title>V64 - lives</title>
+<meta name="robots" content="noindex"><title>V64 - lives (corrected)</title>
 <style>body{font-family:system-ui,sans-serif;background:#111;color:#ddd;margin:16px;max-width:1400px}h1{font-size:20px}h2{font-size:16px;margin:20px 0 6px}
 h3{font-size:14px;margin:16px 0 4px;color:#ccc}.res{background:#3a2a10;border:1px solid #a87b2a;padding:10px;border-radius:6px}
 img{image-rendering:pixelated;display:block;max-width:100%;height:auto}.bar{position:sticky;top:0;background:#111;padding:6px 0}button{margin-right:6px}
 table{border-collapse:collapse;font-size:13px}td,th{border:1px solid #444;padding:3px 8px;text-align:right}a{color:#9cf}</style></head><body>
-<h1>V64 - q252e: lives, NOT ADOPTED YET (the held-out camera, frames 270 - 299)</h1>
-<p class="res"><b>Read this first.</b> q252e is q243e (300 frames in one block) with ONE change: each moving splat gets a life - it is born and
-fades within the block instead of being present at every frame (SharpTimeGS' lives). Where the scene moves it is clearly better: the frame-mean on
-the moving pixels 36.13 against 34.42 dB (+1.71), and the tongs at the pan are solid with the photograph's bright line where q243e draws a faded
-double streak (frames 270 and 299). But the cells on plain still surfaces fell (42 to 40 dB on some of them; the median cell 41.01 against
-41.38): the moving splats took rows from the still room. So it is not adopted as is - the next build (Q253e, the life's cost on) aims to keep
-the gain and give the still room its rows back. In the stills the loss is not visible; judge it in motion below.</p>
+<h1>V64 - q252e: lives, NOT ADOPTED (corrected 19 November) (the held-out camera, frames 270 - 299)</h1>
+<p class="res"><b>CORRECTED 19 November.</b> q252e is q243e (300 frames in one block) with ONE change: each moving splat gets a life - it is born and fades within the block (SharpTimeGS' lives). The frame-mean on the moving pixels rose from 34.42 to 36.13 dB, but <b>that gain is almost all one place: the window sill's reflection under the forearm</b>. Read cell by cell (quality assurance's audit), without the five cells that change most - the sill's four and one beside it - the moving pixels gain only +0.14 dB (+0.17 in the product manager's own check). The tongs are not where the gain is; this page said so before, and that was wrong. The cost is the still top third of the picture (the blind and the wall: rows 0 - 8 about 0.6 dB below q243e), because the movers' short lives take rows from the still room. A follow-up build with a cost on short lives (Q253e) took the sill's gain away and did not give the top third back. <b>Lives rest: not adopted.</b> The frames below are kept as they were made.</p>
 <table><tr><th></th><th>q243e</th><th>q252e (lives)</th><th>difference</th></tr>
 <tr><td style="text-align:left">whole picture, frame-mean</td><td>38.09</td><td>38.61</td><td>+0.52</td></tr>
 <tr><td style="text-align:left">moving pixels, frame-mean</td><td>34.42</td><td>36.13</td><td>+1.71</td></tr>
